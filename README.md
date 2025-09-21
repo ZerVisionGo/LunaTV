@@ -37,7 +37,7 @@
   <img src="public/screenshot3.png" alt="项目截图" style="max-width:600px">
 </details>
 
-### 请不要在 B站、小红书、微信公众号、抖音、今日头条或其他中国大陆社交平台发布视频或文章宣传本项目，不授权任何“科技周刊/月刊”类项目或站点收录本项目。
+### 请不要在 B站、小红书、微信公众号、抖音、今日头条或其他中国大陆社交平台发布视频或文章宣传本项目，不授权任何“科技周刊/月刊”类项目或站点收录本项目
 
 ## 🗺 目录
 
@@ -78,8 +78,8 @@ services:
     ports:
       - '3000:3000'
     environment:
-      - USERNAME=admin
-      - PASSWORD=admin_password
+      - USERNAME=moonTV
+      - PASSWORD=12345678
       - NEXT_PUBLIC_STORAGE_TYPE=kvrocks
       - KVROCKS_URL=redis://moontv-kvrocks:6666
     networks:
@@ -139,6 +139,7 @@ networks:
 1. 在 [upstash](https://upstash.com/) 注册账号并新建一个 Redis 实例，名称任意。
 2. 复制新数据库的 **HTTPS ENDPOINT 和 TOKEN**
 3. 使用如下 docker compose
+
 ```yml
 services:
   moontv-core:
@@ -214,7 +215,7 @@ dockge/komodo 等 docker compose UI 也有自动更新功能
 | ----------------------------------- | -------------------------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | USERNAME                            | 站长账号           | 任意字符串                       | 无默认，必填字段                                                                                                                     |
 | PASSWORD                            | 站长密码           | 任意字符串                       | 无默认，必填字段                                                                                                                     |
-| SITE_BASE                           | 站点 url              |       形如 https://example.com                  | 空                                                                                                                     |
+| SITE_BASE                           | 站点 url              |       形如 <https://example.com>                  | 空                                                                                                                     |
 | NEXT_PUBLIC_SITE_NAME               | 站点名称                                     | 任意字符串                       | MoonTV                                                                                                                     |
 | ANNOUNCEMENT                        | 站点公告                                     | 任意字符串                       | 本网站仅提供影视信息搜索服务，所有内容均来自第三方网站。本站不存储任何视频资源，不对任何内容的准确性、合法性、完整性负责。 |
 | NEXT_PUBLIC_STORAGE_TYPE            | 播放记录/收藏的存储方式                      | redis、kvrocks、upstash | 无默认，必填字段                                                                                                               |
